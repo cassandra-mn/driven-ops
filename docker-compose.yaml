@@ -6,7 +6,7 @@ services:
     ports:
       - 1122:5432
     env_file:
-      - .env
+      - back-end/.env
     volumes:
       - pg_drivenops:/var/lib/postgresql/data
 
@@ -18,7 +18,7 @@ services:
     depends_on:
       - postgres_drivenops
     env_file:
-      - .env
+      - back-end/.env
 
   react_drivenops:
     container_name: react_drivenops
