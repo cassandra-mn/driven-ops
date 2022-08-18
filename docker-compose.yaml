@@ -12,7 +12,7 @@ services:
 
   node_drivenops:
     container_name: node_drivenops
-    build: .
+    build: ./back-end
     ports:
       - 5000:5000
     depends_on:
@@ -20,5 +20,12 @@ services:
     env_file:
       - .env
 
+  react_drivenops:
+    container_name: react_drivenops
+    build: ./front-end
+    volumes:
+      - build_react:/var/www/html
+
 volumes:
   pg_drivenops:
+  build_react:
