@@ -3,7 +3,7 @@ on: [pull_request]
 jobs:
   PullRequest:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Create env file
@@ -17,5 +17,3 @@ jobs:
           file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose-test.yaml run node_drivenops npm run test
-      - name: Build
-        run: npm i && npm run build
